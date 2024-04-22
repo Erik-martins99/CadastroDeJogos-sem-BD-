@@ -1,0 +1,27 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+        <table class="table table-striped table-dark table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>  </th>
+                    <th>Nome</th>
+                    <th>Calssificacao</th>
+                    <th>Console</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for jogo in jogos %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ jogo._nome }}</td>
+                    <td>{{ jogo._categoria }}</td>
+                    <td>{{ jogo._console }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href='http://127.0.0.1:5000/novo'><button type="submit" class="btn btn-primary btn-adicionar">Adicionar</button></a>
+        <form action="/logout">
+            <button type="submit" class="btn btn-danger">Sair</button>
+        </form>
+    {% endblock %}
